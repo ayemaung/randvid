@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="randvid">
+    <output-path>$PROJECT_DIR$/out/artifacts/randvid</output-path>
+    <root id="archive" name="randvid.jar">
+      <element id="module-output" name="randvid" />
+    </root>
+  </artifact>
+</component>
