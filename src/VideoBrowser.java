@@ -20,12 +20,11 @@ public class VideoBrowser {
             System.out.println("Root Folder : " + root.getAbsolutePath());
             List<File> allInFolder = listFilesForFolder(root);
             Collections.shuffle(allInFolder);
-            int rand = new Random().nextInt(allInFolder.size() - 1);
+
+            Random seeder = new Random();
+            int seed = seeder.nextInt(1000000000);
+            int rand = new Random(seed).nextInt(allInFolder.size() - 1);
             File fileOpened = allInFolder.get(rand);
-
-            System.out.println(String.format("#files      : %s %s", allInFolder.size(), extensions));
-            System.out.println(String.format("Randomed    : %s (%d)",  fileOpened.getName(), rand));
-
 
             ProcessBuilder pb = new ProcessBuilder("C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe",
                     fileOpened.getAbsolutePath());
